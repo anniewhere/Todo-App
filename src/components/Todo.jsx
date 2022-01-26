@@ -3,24 +3,12 @@ import { FiEdit } from "react-icons/fi";
 import { BiCircle } from "react-icons/bi";
 import { BiCheckCircle } from "react-icons/bi";
 
-export default function Todo({ item, setTodoEditing, todos, setTodos }) {
-  const toggleCompleted = (id) => {
-    const updatedTodos = [...todos].map((elem) => {
-      if (elem.id === id) {
-        elem.completed = !elem.completed;
-      }
-      return elem;
-    });
-
-    setTodos(updatedTodos);
-  };
-
-  const handleDelete = (id) => {
-    const updatedTodos = [...todos].filter((elem) => elem.id !== id);
-
-    setTodos(updatedTodos);
-  };
-
+export default function Todo({
+  item,
+  toggleCompleted,
+  handleDelete,
+  toggleEditing
+}) {
   return (
     <div className={item.completed ? "todo-item completed" : "todo-item"}>
       <div className="text-container">
@@ -39,7 +27,7 @@ export default function Todo({ item, setTodoEditing, todos, setTodos }) {
         <div className="todo-text">{item.text}</div>
       </div>
       <div className="icons">
-        <FiEdit className="edit-icon" onClick={() => setTodoEditing(item.id)} />
+        <FiEdit className="edit-icon" onClick={() => toggleEditing(item.id)} />
         <RiDeleteBin6Line
           className="delete-icon"
           onClick={() => handleDelete(item.id)}

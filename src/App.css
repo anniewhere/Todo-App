@@ -12,21 +12,19 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  width: 390px;
+  width: 400px;
   height: 600px;
   margin: 60px auto;
   box-shadow: 2px 2px 6px rgb(66, 65, 65);
 }
 
 .app-img {
-  width: 390px;
+  width: 400px;
   height: 600px;
   position: absolute;
   z-index: -1;
   opacity: 0.9;
 }
-
-/*#4782db*/
 
 h3 {
   color: #ffffff;
@@ -39,6 +37,7 @@ h3 {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .input-field {
@@ -46,11 +45,11 @@ h3 {
   outline: none;
   border-radius: 3px;
   background-color: #ffffff;
-  text-align: center;
   border: 2px solid rgb(76, 131, 79);
   box-shadow: 0px 0px 1px rgb(170, 169, 169);
   font-size: 13px;
   letter-spacing: 1px;
+  padding-left: 20px;
 }
 
 .task-btn {
@@ -76,7 +75,7 @@ h3 {
   outline: none;
   border-radius: 3px 0 0 3px;
   background-color: #ffffff;
-  text-align: center;
+  padding-left: 20px;
   border: 1px solid rgb(76, 131, 79);
   margin-bottom: 10px;
   box-shadow: 0px 0px 1px rgb(170, 169, 169);
@@ -98,9 +97,34 @@ h3 {
   font-size: 14px;
 }
 
+.scroll {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.scroll::-webkit-scrollbar-track
+{
+	--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #363936;
+}
+
+.scroll::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #363936;
+}
+
+.scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	--webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #656965;
+}
+
 .todo-container {
-  margin: 30px auto;
-  width: 90%;
+  margin: 30px;
+  width: 335px;
 }
 
 .todo-item {
@@ -125,6 +149,7 @@ h3 {
 
 .todo-text {
   margin-left: 10px;
+  user-select: none;
 }
 
 .icons {

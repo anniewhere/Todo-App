@@ -1,23 +1,13 @@
 import React, { useState } from "react";
 
-export default function TodoForm({ todos, setTodos }) {
+export default function TodoForm({ addTodo }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addTodo(inputValue);
 
-    if (!inputValue || /^\s*$/.test(inputValue)) {
-      return;
-    } else {
-      const newTodo = {
-        id: new Date().getTime(),
-        text: inputValue,
-        completed: false
-      };
-
-      setTodos([...todos, newTodo]);
-      setInputValue("");
-    }
+    setInputValue("");
   };
 
   return (
